@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{{ url_for('static',filename='css/styleOne.css') }}">
+        {% block stylesheets %}
+        {% endblock %}
+        <title>
+            {% block title %}
+            {% endblock %}
+        </title>
+        <style>
+        /*Text Highlight coloring*/
+        ::selection {
+            background-color: darkorange;
+            color: #fff;
+        }
+        /*** Mozilla based browsers ***/
+        ::-moz-selection {
+            background-color: darkorange;
+            color: #fff;
+        }
+
+        /***For Other Browsers ***/
+        ::-o-selection {
+            background-color: darkorange;
+            color: #fff;
+        }
+
+        ::-ms-selection {
+            background-color: darkorange;
+            color: #fff;
+        }
+
+        /*** For Webkit ***/
+        ::-webkit-selection {
+            background-color: darkorange;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div id="menuArea">
+        <input type="checkbox" id="menuToggle"></input>
+
+    <label for="menuToggle" class="menuOpen">
+        <div class="open"></div>
+    </label>
+
+    <div class="menu menuEffects">
+        <label for="menuToggle"></label>
+        <div class="menuContent">
+            <ul>
+                <li><a href="#">Login</a></li>
+                <li><a href="#">What we do</a></li>
+                <li><a href="#">Customer Feedback</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+
+   {% block content %}
+{% endblock %}
+</body></html>
